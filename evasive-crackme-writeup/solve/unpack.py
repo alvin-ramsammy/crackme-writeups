@@ -2,13 +2,12 @@
 """
 Solver for the "Evasive" crackme (crackmes.one).
 
-Two stages:
   1. Extract the RCDATA/FPACK resource from the stub and LZMA-decompress it,
      yielding the real 127 KB PE32+ payload.
   2. Parse the disassembly of main() in that payload to recover both the real
      (XOR-encoded, never-used) flag and the decoy string written to flag.txt.
 
-Stage 2 deliberately re-derives the byte array from the binary instead of
+part 2 deliberately re-derives the byte array from the binary instead of
 hardcoding it, so running this verifies the analysis rather than just repeating
 its conclusion.
 
