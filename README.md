@@ -4,7 +4,7 @@ Reverse engineering writeups I produce while learning the craft. Each one docume
 crackme or CTF binary from first look to solved, including my wrong turns.
 
 I'm a cybersecurity undergraduate (B.S. Cybersecurity, class of 2027) working toward
-vulnerability research and reverse engineering. I have a systems background — x86 assembly,
+vulnerability research and reverse engineering. I have a systems background, having studied x86 assembly,
 C, embedded work and I'm building applied RE on top of it. This repository is the
 practice log for that.
 
@@ -13,7 +13,7 @@ practice log for that.
 **Comfortable with:** reading x86-64 assembly; navigating Ghidra and interpreting decompiler
 output; recognising common packers and container formats from headers and entropy;
 identifying and reversing simple encodings (XOR, arithmetic, substitution); using x64dbg to
-breakpoint and inspect memory; PE structure — sections, imports, resources.
+breakpoint and inspect memory; PE structure: sections, imports, resources.
 
 **Actively learning:** obfuscation and anti-analysis (control-flow flattening, VM-based
 protections, anti-debug); manual unpacking of custom packers rather than known formats;
@@ -28,7 +28,7 @@ scripting-language targets.
 |---|---|---|---|---|
 | **Evasive** | crackmes.one | Windows x64 (PE32+) | LZMA-alone resource packer, runtime API resolution, XOR-encoded string, dead-code flag, overlapping stack stores | [→](evasive/) |
 
-More on the way — see [Roadmap](#roadmap).
+More on the way -> see [Roadmap](#roadmap).
 
 ## How these are organised
 
