@@ -8,10 +8,7 @@ vulnerability research and reverse engineering. I have a systems background — 
 C, embedded work and I'm building applied RE on top of it. This repository is the
 practice log for that.
 
-## Where I actually am
-
-Being straight about this, since a portfolio that overstates itself is worse than a small
-honest one:
+## Where I currently am
 
 **Comfortable with:** reading x86-64 assembly; navigating Ghidra and interpreting decompiler
 output; recognising common packers and container formats from headers and entropy;
