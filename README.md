@@ -57,28 +57,4 @@ Every challenge gets its own directory:
 | Triage | [Detect It Easy](https://github.com/horsicq/Detect-It-Easy), PE-bear, Resource Hacker, HxD |
 | Scripting | Python (`pefile`, `capstone`), Ghidra's script manager |
 
-## Roadmap
-
-Rough order of what I'm working through:
-
-- [ ] IOLI crackme series (`crackme0x00`–`0x09`) — the classic beginner ladder, escalating
-      from plaintext comparison through XOR-encoded validation
-- [ ] [MalwareTech Labs](https://malwaretech.com/labs/) strings track — deliberately built
-      to be solved statically, no debugger
-- [ ] Past [Flare-On](https://flare-on.com/) challenges, stages 1–3 of recent years, since
-      official solutions exist to check against
-- [ ] Flare-On 13 (autumn 2026) live
-- [ ] [challenges.re](https://challenges.re/) — no published solutions, so self-verification
-      only
-- [ ] Progressively harder crackmes.one entries, with an eye toward keygenning rather than
-      just flag extraction
-
-## Notes on scope and legality
-
-Everything here targets binaries authored and published specifically to be reverse
-engineered, like crackmes and CTF challenges. Nothing in this repository involves commercial
-software, license circumvention, or live malware. Writeups are published because the
-challenge authors intend them to be; where a challenge asks that solutions not be
-published, I don't publish one.
-
 
