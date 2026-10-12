@@ -238,54 +238,13 @@ x64dbg on the **unpacked** binary:
 2. Run. The loop has now completed and the buffer is fully decoded.
 3. In the dump pane, follow `rbp-0x20`.
 
-The catch: the array is `int[38]`, not `char[38]`, so each character occupies 4 bytes and
+The array is `int[38]`, not `char[38]`, so each character occupies 4 bytes and
 appears in the dump as ASCII interleaved with three null bytes (`49 00 00 00 45 00 00 00 …`).
 Read every fourth byte, or set the dump to *Integer → 32-bit signed* and read the column.
 This is a good habit to notice early — a "string" that looks null-padded in a dump is
 usually a wide type or an int array, not a corrupted buffer.
 
-## Reproducing
 
-```bash
-pip install pefile
-python3 solve/unpack.py path/to/Evasive.exe
-```
-
-Output:
-
-```
-[+] FPACK: 33948 bytes, props=5d00001000, unpacked size=127489
-[+] wrote Evasive_unpacked.exe (127489 bytes)
-[+] key = 0x60
-[!] REAL FLAG : IEEE{S031me_T1mes_We_h1s_t0_Su111ffer}
-[-] decoy written to flag.txt: F12ag_i5_somehow_1_hidden_XD
-```
-
-The script re-derives the flag by parsing the disassembly of `main` rather than hardcoding
-the byte array, so it verifies the analysis rather than restating its conclusion.
-
-For the Ghidra route, [`ghidra/decode_flag.py`](ghidra/decode_flag.py) does the same thing
-inside Ghidra's script manager against the unpacked binary.
-
-## Ghidra workflow notes
-
-Reusable technique, not specific to this binary:
-
-- **Import the unpacked payload, not the stub.** Reversing a packer's `GetProcAddress`
-  resolution is a detour unless the packer itself is the puzzle.
-- **Retype stack arrays immediately.** By default Ghidra renders 39 consecutive dword
-  stores as 39 unrelated locals, which is unreadable. Right-click the first →
-  *Retype Variable* → `int[38]` collapses them into an array and turns the loop into an
-  obvious `arr[i] ^= key`.
-- **`movabs` immediates are strings.** An 8-byte immediate whose bytes are all in
-  `0x20–0x7E` is an inline string constant. Byte-swap it (x86 is little-endian) to read it.
-  Ghidra will not do this for you because the bytes live in the instruction stream, not in
-  a data section, so `Defined Strings` never shows them.
-- **Check whether a computed value is ever used.** Ghidra's decompiler happily shows dead
-  code without flagging it. Here, the entire flag computation has no consumer. Use
-  *Highlight Def-Use* on the array variable, or simply notice no read follows the loop.
-- **Trust the symbol table when it's there.** 19 sections with `/NN` names indicates MinGW
-  with DWARF debug info retained — check for symbols before assuming a stripped binary.
 
 ## Lessons
 
