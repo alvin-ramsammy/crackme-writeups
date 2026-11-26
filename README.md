@@ -1,12 +1,11 @@
 # crackme-writeups
 
-Reverse engineering writeups I produce while learning the craft. Each one documents a
+This repo is designed to demonstrate the results I produce while learning Reverse Engineering. Each one documents a
 crackme or CTF binary from first look to solved, including my wrong turns.
 
 I'm a cybersecurity undergraduate (B.S. Cybersecurity, class of 2027) working toward
 vulnerability research and reverse engineering. I have a systems background, having studied x86 assembly,
-C, embedded work and I'm building applied RE on top of it. This repository is the
-practice log for that.
+C, and embedded firmware.
 
 ## Where I currently am
 
