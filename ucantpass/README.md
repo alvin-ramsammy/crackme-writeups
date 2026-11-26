@@ -151,9 +151,3 @@ jmp     short loc_11A4
 
 `var_8` is still 10, so `jnz` doesn't jump. The program runs straight into the `Success!` print and then jumps to the return.
 
-## 5. Takeaways
-
-- **A check against a value the program just set is a constant.** `mov [x], 0Ah` followed by `cmp [x], 0Ah` is decided at compile time, so the branch it controls is dead code.
-- **Inverting a conditional jump is the quickest patch.** `jz` ↔ `jnz` (`74` ↔ `75`) flips the outcome with a 1-byte change and doesn't disturb anything else in the function.
-- **Labels aren't functions.** `loc_118E` and `loc_11A2` are jump targets inside `main`, not separate functions. Reading the code as one function makes the control flow easier to follow.
-- **Keep the backup.** Applying patches in IDA overwrites the input file, and the original is handy for diffing or for trying other patches.
