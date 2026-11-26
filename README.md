@@ -1,7 +1,7 @@
 # crackme-writeups
 
 This repo is designed to demonstrate the results I produce while learning Reverse Engineering. Each one documents a
-crackme or CTF binary from first look to solved, including my wrong turns.
+crackme or CTF binary from first impression to the solution.
 
 I'm a cybersecurity undergraduate (B.S. Cybersecurity, class of 2027) working toward
 vulnerability research and reverse engineering. I have a systems background, having studied x86 assembly,
@@ -10,7 +10,7 @@ C, and embedded firmware.
 ## Where I currently am
 
 **Comfortable with:** reading x86-64 assembly; navigating Ghidra and interpreting decompiler
-output; recognising common packers and container formats from headers and entropy;
+output; recognizing common packers and container formats from headers and entropy;
 identifying and reversing simple encodings (XOR, arithmetic, substitution); using x64dbg to
 breakpoint and inspect memory; PE structure: sections, imports, resources.
 
@@ -29,7 +29,7 @@ scripting-language targets.
 
 More on the way -> see [Roadmap](#roadmap).
 
-## How these are organised
+## How these are organized
 
 Every challenge gets its own directory:
 
